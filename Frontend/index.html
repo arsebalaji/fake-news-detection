@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        TruthGuard AI | Fake News Detection
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🛡️ TruthGuard <span>AI</span>
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#">
+                Home
+            </a>
+
+            <a href="#how">
+                How It Works
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <section class="hero">
+
+        <div class="badge">
+            🤖 AI-Powered Fake News Detection
+        </div>
+
+
+        <h1>
+
+            Detect Fake News
+            <br>
+
+            <span>Before You Share</span>
+
+        </h1>
+
+
+        <p>
+
+            Analyze news using Machine Learning
+            and Artificial Intelligence.
+
+        </p>
+
+    </section>
+
+
+
+    <section class="detector">
+
+        <div class="card">
+
+            <div class="card-top">
+
+                <div>
+
+                    <h2>
+                        News Analyzer
+                    </h2>
+
+                    <p>
+                        Enter a news article below
+                    </p>
+
+                </div>
+
+
+                <span class="online">
+                    ● AI ONLINE
+                </span>
+
+            </div>
+
+
+
+            <textarea
+                id="news"
+                placeholder="Paste your news article here..."
+            ></textarea>
+
+
+
+            <div class="bottom-row">
+
+                <span id="count">
+                    0 characters
+                </span>
+
+
+                <button id="clear">
+                    Clear
+                </button>
+
+            </div>
+
+
+
+            <button
+                id="analyze"
+                class="analyze"
+            >
+
+                🔍 Analyze News
+
+            </button>
+
+
+
+            <div
+                id="loading"
+                class="loading hidden"
+            >
+
+                <div class="spinner"></div>
+
+                <p>
+                    AI is analyzing the news...
+                </p>
+
+            </div>
+
+
+
+            <div
+                id="result"
+                class="result hidden"
+            >
+
+                <div id="prediction"></div>
+
+
+                <div class="confidence">
+
+                    <p>
+                        Confidence Score
+                    </p>
+
+                    <strong id="score">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="reason">
+
+                    <h3>
+                        🧠 AI Explanation
+                    </h3>
+
+                    <p id="reasonText"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="how" class="how">
+
+        <h2>
+            How It Works
+        </h2>
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="icon">
+                    📰
+                </div>
+
+                <h3>
+                    Enter News
+                </h3>
+
+                <p>
+                    Paste the news article you want
+                    to analyze.
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <div class="icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI Analysis
+                </h3>
+
+                <p>
+                    Our Flask backend analyzes the
+                    content using AI.
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <div class="icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Get Result
+                </h3>
+
+                <p>
+                    Receive prediction, confidence
+                    and explanation.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <section id="about" class="about">
+
+        <h2>
+            About TruthGuard AI
+        </h2>
+
+        <p>
+
+            TruthGuard AI is a Fake News Detection
+            system combining Machine Learning
+            with Generative AI to analyze news
+            content.
+
+        </p>
+
+    </section>
+
+
+
+    <footer>
+
+        <p>
+            © 2026 TruthGuard AI
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
