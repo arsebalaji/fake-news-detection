@@ -74,9 +74,15 @@ def local_detection(text):
 
 def openrouter_detection(text, api_key):
     prompt = (
-        "Classify the following news text as FAKE or REAL. Return only valid JSON with "
-        'exactly these keys: prediction (FAKE or REAL), confidence (integer 0-100), '
-        "reason (one concise sentence). Confidence must describe how certain you are "
+        "Classify the following news text as FAKE or REAL based on the writing and "
+        "evidence signals in the text. Use REAL for neutral, specific, attributed, "
+        "and plausibly reported text, even when the text cannot be independently "
+        "fact-checked. Use FAKE only when the text contains clear sensationalism, "
+        "unsupported certainty, fabricated-looking claims, or strong contradiction "
+        "inside the article. Do not label a neutral article FAKE merely because it "
+        "mentions a date, number, future event, or a topic you cannot verify. Return "
+        "only valid JSON with exactly these keys: prediction (FAKE or REAL), "
+        "confidence (integer 0-100), reason (one concise sentence). Confidence must describe how certain you are "
         "about the prediction you selected. Do not claim certainty. Do not use your "
         "training-data date or an assumed current date to decide whether a claim is "
         "real; judge only the text and its evidence, and acknowledge when it cannot "
