@@ -54,7 +54,7 @@ def local_detection(text):
     has_date_or_number = bool(re.search(r"\b(?:19|20)\d{2}\b|\b\d+(?:\.\d+)?%?\b", text))
     evidence_score = min(25, credibility_signals * 5 + (5 if has_date_or_number else 0))
     if prediction == "FAKE":
-        confidence = max(2, min(49, 45 - sensational_score // 2))
+        confidence = max(51, min(98, 50 + sensational_score // 2))
     else:
         confidence = max(55, min(92, 55 + evidence_score + min(10, len(text) // 120)))
 
