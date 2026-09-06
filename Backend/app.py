@@ -108,8 +108,7 @@ def openrouter_detection(text, api_key):
     if prediction not in {"FAKE", "REAL"}:
         raise ValueError("Model returned an invalid prediction")
     model_confidence = max(0, min(100, int(result.get("confidence", 0))))
-    confidence = model_confidence
-    confidence = max(2, min(98, confidence))
+    confidence = max(51, min(98, model_confidence))
     return {
         "prediction": prediction,
         "confidence": confidence,
