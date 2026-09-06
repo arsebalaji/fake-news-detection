@@ -77,7 +77,10 @@ def openrouter_detection(text, api_key):
         "Classify the following news text as FAKE or REAL. Return only valid JSON with "
         'exactly these keys: prediction (FAKE or REAL), confidence (integer 0-100), '
         "reason (one concise sentence). Confidence must describe how certain you are "
-        "about the prediction you selected. Do not claim certainty.\n\nNews text:\n" + text
+        "about the prediction you selected. Do not claim certainty. Do not use your "
+        "training-data date or an assumed current date to decide whether a claim is "
+        "real; judge only the text and its evidence, and acknowledge when it cannot "
+        "be verified from the text alone.\n\nNews text:\n" + text
     )
     response = requests.post(
         "https://openrouter.ai/api/v1/chat/completions",
@@ -105,8 +108,8 @@ def openrouter_detection(text, api_key):
     if prediction not in {"FAKE", "REAL"}:
         raise ValueError("Model returned an invalid prediction")
     model_confidence = max(0, min(100, int(result.get("confidence", 0))))
-    confidence = 100 - model_confidence if prediction == "FAKE" else model_confidence
-    confidence = max(2, min(49, confidence)) if prediction == "FAKE" else max(51, min(98, confidence))
+    confidence = model_confidence
+    confidence = max(2, min(98, confidence))
     return {
         "prediction": prediction,
         "confidence": confidence,
